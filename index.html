@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        ChatBOT 
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+   
+    <script src="main.js"></script>
+    <script src="frontend.js"></script>
+    <script src="audioScript.js"></script>
+    
+</head>
+
+<body>
+    <div id="app">
+        <div class="app-container">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-robot"></i>
+                    <strong>BSGBot</strong> 
+                </div>
+                <div class="card-body">
+                    <small>Conversation with Mr.Bot:</small>
+                    <div id="conversation"> 
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="input-group">
+                        <input id="write-message" type="text" class="form-control" placeholder="Write a message here..." onkeydown="if (event.keyCode == 13) {talk()}" >
+                        <div class="input-group-append">
+                            <button id="btn-send" class="btn btn-success" onclick="talk()">
+                                Send
+                                <i class="fas fa-location-arrow"></i>
+                            </button>
+                            <button id="btn-talk" class="btn btn-success btn-block" >
+                                Talk
+                            <!--<i class="fas fa-microphone"></i>-->
+                            <i class="fa fa-microphone"></i>
+                            </button>
+                            <audio class="sound" src="chime.mp3"></audio>
+                        </div>
+                    </div>
+                </div>
+               <!-- <div class="card-footer text-muted">
+                    
+                    <button id="btn-stop" class="btn btn-danger btn-block">
+                        Stop
+                        <i class="fas fa-stop"></i>
+                    </button>
+                </div>
+            -->
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
