@@ -9,6 +9,7 @@
   "author": "Asmita Atanure",
   "license": "ISC",
   "dependencies": {
+    "dialogflow": "^1.1.1",
     "electron": "^7.1.8"
   }
 }
