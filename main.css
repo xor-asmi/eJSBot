@@ -27,18 +27,22 @@ body {
 
    .showRight{
        float: right;
-       background-color:#bbb;
+       background-color: rgba(0,0,0,.03);
        color: black;
-       border: 2px solid #bbb;
-        border-radius: 5px;
+       border: 2px solid lightgray;
+       border-radius: 5px;
+       padding-left: 5px;
+       padding-right: 5px;
    }
 
    .showLeft{
-       float: left;
-       background-color:#bbb;
-       color: black;
-       border: 2px solid #bbb;
+        float: left;
+        background-color: rgba(0,0,0,.03);
+        color: black;
+        border: 2px solid lightgray;
         border-radius: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
    }
 ::placeholder {
     color: #bbb;

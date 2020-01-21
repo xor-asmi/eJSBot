@@ -1,59 +1,51 @@
-
-/**
- * Send a query to the dialogflow agent, and return the query result.
- * @param {string} projectId The project to be used
- */
-
 const botCreds = require('./keys');
 const testagentCred = botCreds.authCredentials;
+var user;
+// console.log("testagentCred.project_id-------------", testagentCred.project_id);
 
-console.log("testagentCred.project_id-------------", testagentCred.project_id);
-// const projectId = testagentCred.project_id;
+function talk() {
+  console.log("in talk");
+  user = document.getElementById("write-message").value;
+  document.getElementById("conversation").innerHTML += "<div class='showRight'>"+user+"</div></br>";
+  runSample();
+  response();
+}
 
-// const dialogflow = require('dialogflow');
-// const uuid = require('uuid');
+function response(){
+  document.getElementById("write-message").value = "Mr. Bot is typing....";
+  setTimeout(function(){
+    var op="Sorry,I don't understand...I am still learning";
+    document.getElementById("write-message").value = "";
+    document.getElementById("conversation").innerHTML += "<div class='showLeft'>"+result+"</div></br>"; 
+  },2000);
+}
 
 async function runSample(projectId = testagentCred.project_id) {
   // console.log("project ID: ",projectId );
-  // A unique identifier for the given session
   const dialogflow = require('dialogflow');
   const sessionId = 'jhassajh14231466';
-  // const sessionClient = new dialogflow.SessionsClient();
   const sessionClient = new dialogflow.SessionsClient({
     credentials: testagentCred,
   });
-  console.log("sessionClient",sessionClient);
+  // console.log("sessionClient",sessionClient);
   const sessionPath = sessionClient.sessionPath(projectId, sessionId);
-  console.log("sessionPath-----",sessionPath);
+  // console.log("sessionPath-----",sessionPath);
 
-  // The text query request.
   const request = {
     session: sessionPath,
     queryInput: {
       text: {
-        // The query to send to the dialogflow agent
-        text: 'hello',
-        // The language used by the client (en-US)
+        text: user,
         languageCode: 'en',
       },
     },  
   };
   console.log( "request-----", request);
-  // Send request and log result
   sessionClient.detectIntent(request)
   .then(responses => {
-    console.log("responses_______________", responses);
-    // console.log('Detected intent');
-    // const result = responses[0].queryResult;
-    // console.log(`  Query: ${result.queryText}`);
-    // console.log(`  Response: ${result.fulfillmentText}`);
-    // if (result.intent) {
-    //   console.log(`  Intent: ${result.intent.displayName}`);
-    // } else {
-    //   console.log(`  No intent matched.`);
-    // }
+    result = responses[0].queryResult.fulfillmentText;
+    // console.log('Response:',result);
   });
 
 }
 
-runSample();
