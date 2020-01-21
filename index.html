@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
+    <title>Chat Bot User Interface</title>
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+        
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+       
    
     <script src="main.js"></script>
     <!-- <script src="frontend.js"></script> -->
@@ -21,45 +27,32 @@
 
 <body>
     <div id="app">
-        <div class="app-container">
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-robot"></i>
-                    <strong>BSGBot</strong> 
-                </div>
+        <div>
+        <div class="card-header">
+            <!-- <div class="user-photo"><img src="ana.JPG"></div> -->
+            <div class='user-photo img' style='width:30px; float:left;'><img src='ana.JPG'></div>
+            <div class="title" style=" margin-left: 30px;"><b>Mr.BOT</b></div>
+            </div>
+           </div>
+               
                 <div class="card-body">
                     <small>Conversation with Mr.Bot:</small>
                     <div id="conversation"> 
-                </div>
-                <div class="card-footer text-muted">
+                    </div>
+                    <br>
+                    
+
+                <div class="card-footer" margin-top: 25px;>
                     <div class="input-group">
-                        <input id="write-message" type="text" class="form-control" placeholder="Write a message here..." onkeydown="if (event.keyCode == 13) {talk()}" >
-                        <div class="input-group-append">
-                            <button id="btn-send" class="btn btn-success" onclick="talk()">
-                                Send
-                                <i class="fas fa-location-arrow"></i>
-                            </button>
-                            <button id="btn-talk" class="btn btn-success btn-block" >
-                                Talk
-                            <!--<i class="fas fa-microphone"></i>-->
-                            <i class="fa fa-microphone"></i>
-                            </button>
-                            <audio class="sound" src="chime.mp3"></audio>
-                        </div>
+                        <input id="write-message" type="text" class="form-control" placeholder="Write a message here..." rows="1" data-min-rows='1' onkeydown="if (event.keyCode == 13) {talk()}" >
+                        <input type ="image"id="rec" src="microphone.png" width="48" height="38">
+                        
                     </div>
                 </div>
-               <!-- <div class="card-footer text-muted">
-                    
-                    <button id="btn-stop" class="btn btn-danger btn-block">
-                        Stop
-                        <i class="fas fa-stop"></i>
-                    </button>
-                </div>
-            -->
+             
             </div>
-        </div>
+        
     </div>
-</div>
 
 </body>
 </html>

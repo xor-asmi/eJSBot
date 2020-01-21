@@ -16,7 +16,7 @@ function response(){
   setTimeout(function(){
     var op="Sorry,I don't understand...I am still learning";
     document.getElementById("write-message").value = "";
-    document.getElementById("conversation").innerHTML += "<div class='showLeft'>"+result+"</div></br>"; 
+    document.getElementById("conversation").innerHTML += "<div><div class='user-photo img' style='width:30px; float:left;'><img src='ana.JPG'></div>"+"<div class='showLeft' style='float:left;'>"+result+"</div></div></br>"; 
   },2000);
 }
 
