@@ -124,3 +124,9 @@ button i {
 {
     margin-top: 25px;
 }
+
+#rec{
+    width: 30px;
+    height: 25px;
+    align-self: center;
+}
