@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "dialogflow": "^1.1.1",
-    "electron": "^7.1.8"
+    "electron": "^15.5.5"
   }
 }
